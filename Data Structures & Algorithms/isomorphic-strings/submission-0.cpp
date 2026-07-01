@@ -1,0 +1,14 @@
+class Solution {
+public:
+    bool isIsomorphic(string s, string t) {
+        int m=s.size(),n=t.size();
+        if(m!=n) return false;
+        for(int i=0;i<m;i++){
+            for(int j=i+1;j<n;j++){
+                if(s[i]==s[j] && t[i]!=t[j]) return false;
+                if(t[i]==t[j] && s[i]!=s[j]) return false;
+            }
+        }
+        return true;
+    }
+};
